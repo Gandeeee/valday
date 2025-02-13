@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<body>
+    <div class="container">  
+        <div class="valentines">
+            <div class="envelope">
+                <div class="front"></div>
+            </div>
+            <div class="card">
+                <div class="text">Happy</br> Valentine's</br> Day Bibub!</div>
+                <div class="heart"></div>
+            </div>
+            <div class="hearts">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+                <div class="four"></div>
+                <div class="five"></div>
+            </div>
+            <div class="shadow"></div>
+        </div>
+    </div>
+
+    <div class="new-section">
+        <h1 class="title">You are my valentine</h1>
+        <p class="description">
+            Thank you cayang sudah sayang sama aku dan bisa ngerasain valday udah 2 kali. tetep sayang sama aku ya dan jangan berubah ya cayangku muahh i love u so muchh!! ini ada puisi dibaca ya!
+        </p>
+        <div class="poetry-container">
+            <div class="poetry-paper">
+                <div class="paper-lines">
+                    <h3>Under Hugs</h3>
+                    <p class="poetry-text">You said we must be doing it wrongIf joy blooms while we fall apart,Yet every fight hums a fragile song,A tender ache, a work of art.</p>
+                    <p class="poetry-text">When the world grows loud and shadows start,We find our rhythm, heart to heart,No fear of darkness, no need to flee,Nothing can stop me when you love me.</p>
+                    <p class="poetry-text">On the roof, beneath endless skies,We trace our dreams where the starlight lies,Not knowing what tomorrow may hold,But holding you is my story told.</p>
+                    <p class="poetry-text">So let the noise and chaos ring,In your arms, I have everything,And even as the moments flee,Nothing can stop me when you love me.</p>
+                </div>
+            </div>
+            <div class="poetry-paper">
+                <div class="paper-lines">
+                    <h3>Obsessed w Love</h3>
+                    <p class="poetry-text">A strange glow wraps around your face,A fleeting star in endless space,Your touch, a spark that angels miss,A fleeting world within a kiss.</p>
+                    <p class="poetry-text">No need to question, no need to know,Let’s lose ourselves in the afterglow,If love should burn beyond control,Even heaven won’t feel whole.</p>
+                    <p class="poetry-text">I’m lost in every step you take,A fragile dream I fear to wake,Obsessed, enchanted, drawn to you,In every shade, in every hue.</p>
+                    <p class="poetry-text">God only knows where we will land,If fire consumes what we had planned,Yet even if we fade to flame,Heaven won’t ever be the same.</p>
+                </div>
+            </div>
+            <div class="poetry-paper">
+                <div class="paper-lines">
+                    <h3>Different path</h3>
+                    <p class="poetry-text">Could you believe I could be someone new,A light to guide and carry you through?Between the sea and silence, I’ll stay,Loving you in a different way.</p>
+                    <p class="poetry-text">Your heart, once broken, will beat again,I'll chase away the lingering pain.When storms arrive and skies turn gray,I'll love you in a different way.
+                    </p>
+                    <p class="poetry-text">Let me be the thread that mends,A constant hope that never bends.No past can haunt what we will build,In love that’s pure, in hearts fulfilled.</p>
+                    <p class="poetry-text">So breathe easy, my dear, don't fear,Call my name, and I'll appear.With every word I vow to say,I'll love you in a different way.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="btn-end">
+        <a href="extra.html" target="_blank" class="btn-custom">Klik aku dong</a>
+    </div>
+    
+    
+    <footer class="romantic-footer">
+        <p class="footer-text">"My love for you is like a journey, starting at forever and ending at never."</p>
+        <div class="footer-heart">
+            <span>💖</span>
+        </div>
+    </footer>
+    
+    
+
+    <script>
+        $(document).ready(function () {
+            let isCardOpen = false;
+
+            $('.envelope').click(function () {
+                if (!isCardOpen) {
+                    $('.card').stop().animate({
+                        top: '-90px'
+                    }, 'slow');
+                } else {
+                    $('.card').stop().animate({
+                        top: '0'
+                    }, 'slow');
+                }
+                isCardOpen = !isCardOpen;
+            });
+
+            $('.title, .description, .photo-item').css('opacity', '0');
+            
+            $(window).scroll(function() {
+                let scrollPos = $(window).scrollTop();
+                let windowHeight = $(window).height();
+                
+                $('.new-section').each(function() {
+                    let elemPos = $(this).offset().top;
+                    
+                    if (scrollPos > elemPos - windowHeight + 200) {
+                        $(this).find('.title, .description, .photo-item').css({
+                            'opacity': '1',
+                            'transform': 'translateY(0)'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
